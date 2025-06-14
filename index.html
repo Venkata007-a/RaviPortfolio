@@ -47,6 +47,7 @@
         h2 {
             font-size: 2.5em;
             font-weight: 600;
+            margin-top: 0; /* Adjusted for better spacing in hero */
             margin-bottom: 30px;
         }
 
@@ -544,5 +545,452 @@
             animation: float2 12s infinite ease-in-out;
         }
 
-
         .contact-section .section-title {
+            /* This style block was incomplete in your original code, added below for completeness */
+            margin-bottom: 40px; /* Example value */
+            color: #2c3e50;
+        }
+
+        /* Contact content */
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background-color: #fff;
+            padding: 25px 35px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            flex: 1;
+            min-width: 280px; /* Ensure items don't get too small */
+            max-width: 350px;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .contact-item i {
+            font-size: 2.5em;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+
+        .contact-item p {
+            font-size: 1.1em;
+            color: #555;
+            margin-bottom: 0;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #2c3e50; /* Dark blue-gray */
+            color: #ecf0f1;
+            text-align: center;
+            padding: 30px 20px;
+            font-size: 0.9em;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        .footer .social-links {
+            margin-top: 15px;
+        }
+
+        .footer .social-links a {
+            color: #ecf0f1;
+            font-size: 1.5em;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .footer .social-links a:hover {
+            color: #3498db;
+        }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes float1 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(20px, 10px) rotate(5deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+        @keyframes float2 {
+            0% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-15px, -10px) rotate(-3deg); }
+            100% { transform: translate(0, 0) rotate(0deg); }
+        }
+
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .navbar .nav-links {
+                margin-left: auto; /* Adjust to keep logo to the left */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar .container {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .navbar .logo {
+                margin-bottom: 15px;
+            }
+
+            .navbar .nav-links {
+                flex-direction: column;
+                align-items: center;
+                margin-top: 10px;
+            }
+
+            .navbar .nav-links li {
+                margin: 10px 0;
+            }
+
+            .hero-content h1 {
+                font-size: 3em;
+            }
+
+            .hero-content h2 {
+                font-size: 1.6em;
+            }
+
+            .hero-content p {
+                font-size: 1em;
+            }
+
+            .about-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .about-photo img {
+                margin-bottom: 30px;
+            }
+
+            .competencies-tools {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2.5em;
+            }
+            .project-card {
+                padding: 30px;
+            }
+            .project-card h3 {
+                font-size: 1.8em;
+            }
+            .project-card h4 {
+                font-size: 1.2em;
+            }
+            .details-grid {
+                grid-template-columns: 1fr;
+            }
+            .contact-info {
+                flex-direction: column;
+                align-items: center;
+            }
+            .contact-item {
+                max-width: 100%; /* Allow contact items to take full width */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .hero-content h2 {
+                font-size: 1.4em;
+            }
+            .btn {
+                padding: 10px 20px;
+                font-size: 0.9em;
+            }
+            .expertise-highlights ul {
+                grid-template-columns: 1fr;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">Ravi Kumar</a>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="hero" class="hero-section">
+        <div class="hero-content">
+            <h1>Ravi Kumar</h1>
+            <h2>Senior Data & Process Optimization Specialist</h2>
+            <p>Leveraging over a decade of experience, I specialize in transforming complex data into actionable insights and streamlining business operations for maximum efficiency and growth. My passion lies in solving intricate problems and driving tangible results through data-driven strategies and process innovation.</p>
+            <div class="hero-buttons">
+                <a href="#projects" class="btn primary">View My Projects</a>
+                <a href="#contact" class="btn secondary">Get In Touch</a>
+            </div>
+        </div>
+        <div class="expertise-highlights">
+            <h3>Key Areas of Expertise:</h3>
+            <ul>
+                <li>Data Analytics & Visualization</li>
+                <li>Process Automation & RPA</li>
+                <li>Business Intelligence (BI) Development</li>
+                <li>SQL Database Management</li>
+                <li>Excel & VBA Automation</li>
+                <li>Strategic Problem Solving</li>
+                <li>Project Management</li>
+                <li>Data Governance & Quality</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="about" class="about-section visible">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-photo">
+                    <img src="Ravi B.png" alt="Ravi Kumar Professional Headshot">
+                </div>
+                <div class="about-text">
+                    <h3>My Journey & Philosophy</h3>
+                    <p>With a robust background spanning over 10 years, I've dedicated my career to optimizing business processes and extracting meaningful insights from data. My expertise lies in designing and implementing solutions that enhance operational efficiency, reduce costs, and support strategic decision-making.</p>
+                    <p>I thrive in dynamic environments, consistently seeking innovative approaches to complex challenges. Whether it's developing sophisticated BI dashboards, automating repetitive tasks with VBA/Python, or managing data pipelines, my goal is always to deliver measurable improvements and empower organizations with reliable information.</p>
+                    <p>Beyond the technical realm, I am a firm believer in continuous learning and fostering collaborative environments. I enjoy mentoring teams, bridging the gap between technical capabilities and business needs, and driving projects from concept to successful execution.</p>
+                </div>
+            </div>
+
+            <div class="competencies-tools">
+                <div class="card">
+                    <h3>Core Competencies</h3>
+                    <ul>
+                        <li>Data Analysis & Reporting</li>
+                        <li>Process Mapping & Re-engineering</li>
+                        <li>Business Requirements Gathering</li>
+                        <li>Performance Optimization</li>
+                        <li>Quality Assurance & Testing</li>
+                        <li>Stakeholder Communication</li>
+                        <li>Risk Assessment & Mitigation</li>
+                        <li>Change Management</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h3>Tools & Technologies</h3>
+                    <ul>
+                        <li>SQL (Advanced)</li>
+                        <li>Python (Pandas, NumPy, Matplotlib)</li>
+                        <li>Microsoft Excel (VBA, Power Query, Power Pivot)</li>
+                        <li>Power BI, Tableau</li>
+                        <li>UiPath, Automation Anywhere (RPA)</li>
+                        <li>Jira, Asana, Trello</li>
+                        <li>SharePoint</li>
+                        <li>Git/GitHub</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title">My Projects & Impact</h2>
+            
+            <div class="project-card">
+                <h3>Supply Chain Optimization Through Data Analytics</h3>
+                <h4>Lead Data Analyst & Process Architect</h4>
+                <p class="context">Faced with escalating logistics costs and inefficiencies, a manufacturing client sought a comprehensive solution to streamline their supply chain operations.</p>
+                <div class="details-grid">
+                    <div>
+                        <ul>
+                            <li>Designed and implemented a **data collection framework** integrating disparate data sources (ERP, WMS, CRM).</li>
+                            <li>Developed **SQL queries and Python scripts** to clean, transform, and load large datasets for analysis.</li>
+                            <li>Built **interactive Power BI dashboards** visualizing key metrics like lead times, inventory turns, and supplier performance.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Identified bottlenecks in warehousing and transportation through **process mapping and bottleneck analysis**.</li>
+                            <li>Automated routine data reconciliation tasks using **VBA and Power Query**, reducing manual effort by 70%.</li>
+                            <li>Provided actionable insights that led to renegotiated supplier contracts and optimized delivery routes.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="tools">**Tools:** SQL Server, Python, Power BI, Excel (VBA/Power Query), Visio</p>
+                <div class="results-box">
+                    <h4>Key Results:</h4>
+                    <ul>
+                        <li>**15% reduction in overall logistics costs** within 12 months.</li>
+                        <li>**20% improvement in on-time delivery rates**.</li>
+                        <li>**Reduced data processing time by 80%**, freeing up team resources.</li>
+                        <li>Enhanced visibility into supply chain performance, enabling proactive decision-making.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <h3>Automated Financial Reporting System for a Mid-Sized Firm</h3>
+                <h4>Process Automation Specialist</h4>
+                <p class="context">A financial services firm was struggling with manual, error-prone monthly and quarterly report generation, leading to delays and compliance risks.</p>
+                <div class="details-grid">
+                    <div>
+                        <ul>
+                            <li>Conducted a detailed **process analysis** of existing reporting procedures, identifying key pain points and automation opportunities.</li>
+                            <li>Developed a robust **RPA solution using UiPath** to automate data extraction from multiple legacy systems.</li>
+                            <li>Designed **Excel-based templates with complex VBA macros** for automated data consolidation and report formatting.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>Implemented **data validation rules** within the automation to ensure accuracy and reduce human error.</li>
+                            <li>Created comprehensive documentation and provided training for end-users on the new automated system.</li>
+                            <li>Integrated the solution with email for automated distribution of final reports to stakeholders.</li>
+                        </ul>
+                    </div>
+                </div>
+                <p class="tools">**Tools:** UiPath, Microsoft Excel (VBA), SQL, SharePoint</p>
+                <div class="results-box">
+                    <h4>Key Results:</h4>
+                    <ul>
+                        <li>**90% reduction in time spent on monthly financial report generation.**</li>
+                        <li>**Eliminated 100% of data entry errors** in the reporting process.</li>
+                        <li>**Saved an estimated 40 man-hours per month**, allowing staff to focus on analysis rather than data preparation.</li>
+                        <li>Improved report accuracy and compliance adherence.</li>
+                    </ul>
+                </div>
+            </div>
+
+            </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p>I'm always open to discussing new projects, collaboration opportunities, or simply sharing insights on data and process optimization. Feel free to reach out!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email Me</h3>
+                    <p><a href="mailto:your.email@example.com">your.email@example.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>Connect on LinkedIn</h3>
+                    <p><a href="https://linkedin.com/in/yourprofile" target="_blank">linkedin.com/in/yourprofile</a></p>
+                </div>
+                </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Ravi Kumar. All rights reserved.</p>
+            <div class="social-links">
+                <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                </div>
+        </div>
+    </footer>
+
+    <script>
+        // JavaScript for scroll animations
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = document.querySelectorAll('section');
+
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.2 // Adjust as needed. Percentage of section visible before animating
+            };
+
+            const sectionObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        // Optional: Unobserve after it becomes visible if you only want it to animate once
+                        // observer.unobserve(entry.target);
+                    } else {
+                        // Optional: Remove 'visible' if you want it to re-animate on scroll back up
+                        // entry.target.classList.remove('visible');
+                    }
+                });
+            }, observerOptions);
+
+            sections.forEach(section => {
+                if (section.id !== 'projects') { // Exclude 'projects' section from this animation if it's always visible by CSS
+                    sectionObserver.observe(section);
+                }
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+</html>
