@@ -7,9 +7,12 @@
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Roboto:wght@300;400;700&family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <style>
         /* General Body and Container Styling */
@@ -764,9 +767,35 @@
             }
         }
 
+        /* Custom styles from Infographic for charts and KPIs */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .kpi-value {
+            font-weight: 900;
+            color: #004AAD;
+        }
+        .kpi-label {
+            color: #4A5568;
+        }
+        .flow-arrow {
+            color: #419BFF;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
+<body class="text-gray-800">
 
     <nav class="navbar">
         <div class="container">
@@ -774,7 +803,7 @@
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a href="#visuals">Visuals</a></li> <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -837,6 +866,135 @@
         </div>
     </section>
 
+    <section id="visuals" class="projects-section visible">
+        <div class="container">
+            <h2 class="section-title">Visualizing My Impact</h2>
+
+            <section id="kpi-highlights" class="mb-12">
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 text-center">
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <p class="text-5xl kpi-value">4M+</p>
+                        <p class="mt-2 text-lg kpi-label">Customer Accounts Digitized</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <p class="text-5xl kpi-value">₹450Cr</p>
+                        <p class="mt-2 text-lg kpi-label">Unclaimed Deposits Recovered</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <p class="text-5xl kpi-value">30+</p>
+                        <p class="mt-2 text-lg kpi-label">Years of Diverse Experience</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="cornerstone-project" class="mb-12">
+                <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                    <h3 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD] mb-6">Cornerstone Project: Nationwide Debit Card System Rollout</h3>
+                    <p class="text-center text-gray-600 max-w-4xl mx-auto mb-8">Between 1999 and 2007, I led a landmark initiative for the State Bank of Hyderabad to digitize millions of physical customer records from branches across India. This massive undertaking was critical for introducing the new debit card system and modernizing the bank's services.</p>
+                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+                        
+                        <div>
+                            <h4 class="text-xl font-bold mb-4 text-center">Project Timeline & Delivery</h4>
+                            <div class="relative pl-8">
+                                <div class="absolute left-0 top-0 bottom-0 w-1 bg-[#91C8FF] rounded"></div>
+                                <div class="mb-8 relative">
+                                    <div class="absolute left-[-39px] top-0 h-6 w-6 bg-[#0062D5] rounded-full border-4 border-white"></div>
+                                    <h5 class="font-bold text-lg text-[#0062D5]">1999: Project Kick-off</h5>
+                                    <p class="text-gray-600">Led a 40-member team to digitize data from 360 branches.</p>
+                                </div>
+                                <div class="mb-8 relative">
+                                    <div class="absolute left-[-39px] top-0 h-6 w-6 bg-[#0062D5] rounded-full border-4 border-white"></div>
+                                    <h5 class="font-bold text-lg text-[#0062D5]">2007: Project Completion</h5>
+                                    <p class="text-gray-600">Entire nationwide rollout completed successfully.</p>
+                                </div>
+                                <div class="relative">
+                                    <div class="absolute left-[-39px] top-0 h-6 w-6 bg-[#004AAD] rounded-full border-4 border-white"></div>
+                                    <h5 class="font-bold text-lg text-[#004AAD]">5 Years Ahead of Schedule</h5>
+                                    <p class="text-gray-600">Finished the project well before the original 2012 deadline, accelerating modern banking adoption.</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-xl font-bold mb-2 text-center">Data Integrity & Accuracy</h4>
+                            <p class="text-center text-gray-600 mb-4">Rigorous quality control was paramount. We implemented innovative data remediation techniques to achieve exceptional accuracy across millions of records.</p>
+                            <div class="chart-container">
+                                <canvas id="accuracyChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="core-expertise" class="mb-12">
+                <h3 class="text-2xl md:text-3xl font-bold text-center text-[#004AAD] mb-8">Core Expertise & Measurable Impact</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 text-[#0062D5]">Process Optimization</h4>
+                        <p class="text-gray-600 mb-4">I design and implement robust systems to streamline complex data workflows, turning manual tasks into efficient, automated processes.</p>
+                        <div class="text-center my-4 p-4 bg-gray-50 rounded-lg">
+                            <div class="flex items-center justify-center space-x-2 text-sm">
+                                <span class="bg-[#CDE6FF] text-[#004AAD] py-1 px-3 rounded-full">Acquisition</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="bg-[#CDE6FF] text-[#004AAD] py-1 px-3 rounded-full">Curation</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="bg-[#CDE6FF] text-[#004AAD] py-1 px-3 rounded-full">Hygiene</span>
+                                <span class="flow-arrow">&rarr;</span>
+                                <span class="bg-[#CDE6FF] text-[#004AAD] py-1 px-3 rounded-full">Lead Gen</span>
+                            </div>
+                        </div>
+                        <p class="font-semibold text-center text-lg mt-4">Result: <span class="text-[#004AAD]">50% Reduction</span> in Data Management Time</p>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 text-[#0062D5]">Data Quality Assurance</h4>
+                        <p class="text-gray-600 mb-4">My focus on data integrity enhances CRM systems, improves lead quality, and provides a reliable foundation for business decisions.</p>
+                        <div class="chart-container h-64 md:h-72">
+                               <canvas id="accuracyImprovementChart"></canvas>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl shadow-lg">
+                        <h4 class="text-xl font-bold mb-4 text-[#0062D5]">Project & Program Leadership</h4>
+                        <p class="text-gray-600 mb-4">I have a long track record of leading cross-functional teams, managing executive stakeholders, and delivering complex projects under challenging conditions.</p>
+                            <div class="text-center mt-8">
+                                <p class="text-7xl font-black text-[#004AAD]">40+</p>
+                                <p class="text-xl font-semibold text-gray-700 mt-2">Team Members Led</p>
+                                <p class="text-gray-500 text-sm">(Nationwide Digitization Project)</p>
+                            </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills-overview" class="mb-12">
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                    <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-2">Multi-faceted Skillset</h3>
+                            <p class="text-center text-gray-600 mb-4">My capabilities are balanced across strategic and operational domains, enabling me to tackle challenges from multiple angles.</p>
+                            <div class="chart-container">
+                                <canvas id="skillsRadarChart"></canvas>
+                            </div>
+                    </div>
+
+                       <div class="bg-white p-6 sm:p-8 rounded-xl shadow-lg">
+                            <h3 class="text-2xl font-bold text-center text-[#004AAD] mb-6">Key Technical Proficiencies</h3>
+                            <p class="text-center text-gray-600 mb-6">Leveraging a powerful toolkit to analyze data, automate processes, and drive operational excellence.</p>
+                            <div class="flex flex-wrap justify-center gap-3">
+                                <span class="bg-[#004AAD] text-white py-2 px-4 rounded-full font-semibold">Advanced Excel</span>
+                                <span class="bg-[#0062D5] text-white py-2 px-4 rounded-full font-semibold">Macros/VBA</span>
+                                <span class="bg-[#0062D5] text-white py-2 px-4 rounded-full font-semibold">VLOOKUP/XLOOKUP</span>
+                                <span class="bg-[#419BFF] text-white py-2 px-4 rounded-full font-semibold">Salesforce (CRM)</span>
+                                <span class="bg-[#419BFF] text-white py-2 px-4 rounded-full font-semibold">Data Migration</span>
+                                <span class="bg-[#91C8FF] text-[#004AAD] py-2 px-4 rounded-full font-semibold">Web Scraping</span>
+                                <span class="bg-[#91C8FF] text-[#004AAD] py-2 px-4 rounded-full font-semibold">Data Curation</span>
+                                <span class="bg-[#CDE6FF] text-[#004AAD] py-2 px-4 rounded-full font-semibold">Process Automation</span>
+                            </div>
+                        </div>
+                </div>
+            </section>
+        </div>
+    </section>
     <section id="projects" class="projects-section">
         <div class="container">
             <h2 class="section-title">Selected Projects – Driving Efficiency Through Data & Process Innovation</h2>
@@ -1006,9 +1164,10 @@
             }, observerOptions);
 
             sections.forEach(section => {
-                if (section.id !== 'projects') { // Exclude 'projects' section from this animation if it's always visible by CSS
-                    sectionObserver.observe(section);
-                }
+                // Ensure the new 'visuals' section also gets the 'visible' class on load if desired,
+                // or keep it out of the observer if you want it to always be visible like 'projects'.
+                // For now, let's include it in the observer for a potential fade-in.
+                sectionObserver.observe(section);
             });
 
             // Smooth scrolling for navigation links
@@ -1021,6 +1180,178 @@
                     });
                 });
             });
+
+            // --- Chart.js Initialization from Infographic Code ---
+            const CHART_COLORS = {
+                blue: '#0062D5',
+                lightBlue: '#91C8FF',
+                darkBlue: '#004AAD',
+                background: 'rgba(65, 155, 255, 0.2)',
+                border: '#419BFF',
+                gray: '#E5E7EB'
+            };
+            
+            const wrapLabel = (label, maxLength) => {
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                words.forEach(word => {
+                    if ((currentLine + word).length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = '';
+                    }
+                    currentLine += word + ' ';
+                });
+                lines.push(currentLine.trim());
+                return lines;
+            };
+            
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                } else {
+                  return label;
+                }
+            };
+
+            const defaultChartOptions = {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'bottom',
+                        labels: {
+                           font: {
+                                size: 12,
+                                family: 'Inter'
+                           }
+                        }
+                    },
+                    tooltip: {
+                        callbacks: {
+                            title: tooltipTitleCallback
+                        },
+                        backgroundColor: '#000',
+                        titleFont: { size: 14, family: 'Inter', weight: 'bold' },
+                        bodyFont: { size: 12, family: 'Inter' },
+                    }
+                }
+            };
+
+            const accuracyCtx = document.getElementById('accuracyChart')?.getContext('2d');
+            if (accuracyCtx) {
+                new Chart(accuracyCtx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: [wrapLabel('Overall Data Accuracy', 16), wrapLabel('Critical Signature Scan Accuracy', 16)],
+                        datasets: [{
+                            data: [94, 100],
+                            backgroundColor: [CHART_COLORS.blue, CHART_COLORS.darkBlue],
+                            borderColor: '#FFFFFF',
+                            borderWidth: 4,
+                            hoverOffset: 8
+                        }]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        cutout: '70%',
+                    }
+                });
+            }
+
+            const accuracyImprovementCtx = document.getElementById('accuracyImprovementChart')?.getContext('2d');
+            if (accuracyImprovementCtx) {
+                new Chart(accuracyImprovementCtx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Legacy System', 'Optimized System'],
+                        datasets: [{
+                            label: 'Data Accuracy Index',
+                            data: [1, 10],
+                            backgroundColor: [CHART_COLORS.lightBlue, CHART_COLORS.darkBlue],
+                            borderColor: [CHART_COLORS.lightBlue, CHART_COLORS.darkBlue],
+                            borderWidth: 1,
+                            borderRadius: 5
+                        }]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Relative Accuracy (10X Improvement)'
+                                }
+                            }
+                        },
+                        plugins: {
+                            ...defaultChartOptions.plugins,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+
+            const skillsRadarCtx = document.getElementById('skillsRadarChart')?.getContext('2d');
+            if (skillsRadarCtx) {
+                new Chart(skillsRadarCtx, {
+                    type: 'radar',
+                    data: {
+                        labels: [
+                            wrapLabel('Data Management & Digitization', 16),
+                            wrapLabel('Process Optimization', 16),
+                            wrapLabel('Project & Program Leadership', 16),
+                            wrapLabel('Analytical & Technical', 16),
+                            wrapLabel('Operational Acumen', 16)
+                        ],
+                        datasets: [{
+                            label: 'Proficiency Level',
+                            data: [9, 9, 10, 8, 9],
+                            fill: true,
+                            backgroundColor: CHART_COLORS.background,
+                            borderColor: CHART_COLORS.border,
+                            pointBackgroundColor: CHART_COLORS.border,
+                            pointBorderColor: '#fff',
+                            pointHoverBackgroundColor: '#fff',
+                            pointHoverBorderColor: CHART_COLORS.border
+                        }]
+                    },
+                    options: {
+                        ...defaultChartOptions,
+                        scales: {
+                            r: {
+                                beginAtZero: true,
+                                max: 10,
+                                ticks: {
+                                    display: false
+                                },
+                                pointLabels: {
+                                    font: {
+                                        size: 13,
+                                        family: 'Inter',
+                                        weight: '600'
+                                    }
+                                }
+                            }
+                        },
+                        plugins: {
+                            ...defaultChartOptions.plugins,
+                            legend: {
+                                display: false
+                            }
+                        }
+                    }
+                });
+            }
+            // --- End Chart.js Initialization ---
         });
     </script>
 </body>
